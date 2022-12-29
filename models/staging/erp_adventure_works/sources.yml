@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: erp
+    description: Banco réplica do erp da Adventure Works.
+    schema: erp_adventure_works
+    tables:
+      - name: product
+        description: Tabela de pedidos
+        columns:
+          - name: order_id
+            description: Chave primária da tabela de ordens.
+            tests:
+              - unique
+              - not_null
+      
+      
