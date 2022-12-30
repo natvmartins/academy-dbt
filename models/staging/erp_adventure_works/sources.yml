@@ -42,4 +42,43 @@ sources:
           - name: style 
             description: Descrição.
 
+      - name: address
+        description: Tabela de endereços.
+        columns:
+          - name: addressid
+            description: ID de endereço.
+          
+          - name: stateprovinceid
+            description: ID do estado.
+
+          - name: city
+            description: Nome da cidade.
+
+      - name: businessentitycontact
+        description: Tabela de endereços.
+        columns:
+          - name: businessentityid				
+            description: ID da entidade de negócio.
+
+          - name: personid
+            description: ID da pessoa.
+
+      - name: person
+        description: Tabela de pessoas.
+        columns:
+          - name: businessentityid				
+            description: ID da entidade de negócio.
+
+          - name: firstname				
+            description: Primeiro nome da pessoa.
+
+          - name: middlename				
+            description: Segundo nome da pessoa.
+
+          - name: lastname				
+            description: Último nome da pessoa.
+
+
+    
+
       
