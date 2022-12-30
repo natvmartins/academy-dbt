@@ -34,7 +34,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_adventure_works:
     staging:
-      erp_adventure_works:
+      sap_adw:
         +materialized: view
     
     marts:

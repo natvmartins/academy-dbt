@@ -3,15 +3,43 @@ version: 2
 sources:
   - name: erp
     description: Banco réplica do erp da Adventure Works.
-    schema: erp_adventure_works
+    schema: sap_adw
     tables:
       - name: product
         description: Tabela de pedidos
         columns:
-          - name: order_id
-            description: Chave primária da tabela de ordens.
-            tests:
-              - unique
-              - not_null
-      
+          - name: productid 
+            description: Descrição.
+
+          - name: productsubcategoryid 
+            description: Descrição.
+
+          - name: name
+          - name: productnumber 
+            description: Descrição.
+
+          - name: color 
+            description: Descrição.
+
+          - name: safetystocklevel 
+            description: Descrição.
+
+          - name: standardcost 
+            description: Descrição.
+
+          - name: listprice 
+            description: Descrição.
+
+          - name: daystomanufacture 
+            description: Descrição.
+
+          - name: productline	
+            description: Descrição.
+
+          - name: class 
+            description: Descrição.
+
+          - name: style 
+            description: Descrição.
+
       
