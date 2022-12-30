@@ -1,7 +1,7 @@
 with
     source_product as (
         select 
-            cast (productid as string) as id_produto
+            cast (productid as numeric) as id_produto
             , cast (productsubcategoryid as string) as id_subcategoria_produto
             , cast (name as string) as nome_produto
             , cast (productnumber as string) as numero_produto
@@ -27,6 +27,7 @@ with
             --, modifieddate
             --, productmodelid
  
+        from {{ source('erp', 'product') }}
     )
 
 select *
