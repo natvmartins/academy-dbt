@@ -78,6 +78,99 @@ sources:
           - name: lastname				
             description: Último nome da pessoa.
 
+      - name: transactionhistory
+        description: Tabela de histórico de transações.
+        columns:
+          - name: transactionid
+            description: ID da transação.
+
+          - name: productid 				
+            description: ID do produto.
+
+          - name: referenceorderid 				
+            description: ID de referência da ordem.
+
+          - name: referenceorderlineid 				
+            description: ID da linha de referência da ordem.
+
+          - name: transactiondate 				
+            description: Data da transação.
+
+          - name: transactiontype 				
+            description: Tipo da transação.
+
+          - name: quantity			
+            description: Quantidade vendida do produto.
+
+          - name: actualcost				
+            description: Custo atual do produto.
+
+      - name: transactionhistoryarchive
+        description: Tabela de histórico de transações.
+        columns:
+          - name: transactionid
+            description: ID da transação.
+
+          - name: productid 				
+            description: ID do produto.
+
+          - name: referenceorderid 				
+            description: ID de referência da ordem.
+
+          - name: referenceorderlineid 				
+            description: ID da linha de referência da ordem.
+
+          - name: transactiondate 				
+            description: Data da transação.
+
+          - name: transactiontype 				
+            description: Tipo da transação.
+
+          - name: quantity			
+            description: Quantidade vendida do produto.
+
+          - name: actualcost				
+            description: Custo atual do produto.
+
+      - name: workorder
+        description: Tabela de pedidos.
+        columns:
+          - name: workorderid
+            description: ID do pedido.
+
+          - name: productid
+            description: ID do produto.
+
+          - name: orderqty
+            description: Quantidade de produto pedida.
+
+          - name: scrappedqty
+            description: Quantidade de produto sucateado.
+
+          - name: startdate
+            description: Data de início.
+
+          - name: enddate
+            description: Data final.
+
+          - name: duedate
+            description:  Data limite.                                   
+            
+            
+             
+             
+             
+             
+             
+             
+             
+    
+            			
+            			
+         
+            			
+            
+
 
     
 
