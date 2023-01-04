@@ -276,6 +276,30 @@ sources:
             description: ID do motivo da venda.
             
 
+      - name: salesorderdetail
+        description: Tabela de detalhes de vendas.
+        columns: 
+          - name: salesorderid
+            description: ID da venda.
+
+          - name: salesorderdetailid
+            description: ID de detalhe da venda.
+
+          - name: orderqty
+            description: Quantidade do pedido.
+
+          - name: productid
+            description: ID do produto.
+
+          - name: specialofferid
+            description: ID da oferta especial.
+
+          - name: unitprice
+            description: Preço unitário do produto.
+
+          - name: unitpricediscount
+            description: Desconto de preço unitário
+
 
 
 	             
