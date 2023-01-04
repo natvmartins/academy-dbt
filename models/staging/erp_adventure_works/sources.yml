@@ -14,7 +14,6 @@ sources:
           - name: productsubcategoryid 
             description: Descrição.
 
-          - name: name
           - name: productnumber 
             description: Descrição.
 
@@ -188,15 +187,98 @@ sources:
             
           - name: creditcardid
             description: Tipo do cartão de crédito.
+             
+      - name: salesorderheader
+        description: Tabela de vendas.
+        columns:
+          - name:  salesorderid
+            description: ID da ordem de venda.
+
+          - name:  customerid
+            description: ID do cliente.
+
+          - name:  salespersonid
+            description: ID da pessoa de vendas.
+
+          - name:  territoryid
+            description: ID da região.
+
+          - name:  billtoaddressid
+            description: ID do endereço de cobrança.
+
+          - name:  shiptoaddressid
+            description: ID do endereço de entrega.
+
+          - name:  shipmethodid
+            description: ID do método de entrega.
+
+          - name:  creditcardid
+            description: ID do cartão de crédito.
+
+          - name:  orderdate
+            description: Data do pedido.
+
+          - name:  duedate
+            description: Data limite.
+
+          - name:  shipdate
+            description: Data de entrega.
+
+          - name:  status
+            description: Status da entrega.
+
+          - name:  onlineorderflag
+            description: Aviso de pedido online.
+
+          - name:  subtotal
+            description: Valor parcial da compra (sem taxas e frete).
+
+          - name:  taxamt
+            description: Valor da taxa da compra.
+
+          - name:  freight
+            description: Valor do frete.
+
+          - name:  totaldue
+            description: Valor total.
+
+      - name: salesreason
+        description: Tabela de motivo das vendas.
+        columns:
+          - name:  salesreasonid
+            description: ID do motivo de venda.   
+
+          - name:  name
+            description: Motivo da venda.
+             
+          - name:  reasontype
+            description: Tipo do motivo da venda.     
+
+      - name: salesterritory
+        description: Tabela da região das vendas.
+        columns: 
+          - name: territoryid
+            description: ID da região.
+
+          - name: name
+            description: Nome da região.
+
+          - name: countryregioncode
+            description: Código do país da região.
+
+      - name: salesorderheadersalesreason
+        description: Tabela de IDs dos motivos das vendas.
+        columns:
+          - name: salesorderid
+            description: ID da ordem de venda.
+
+          - name: salesreasonid
+            description: ID do motivo da venda.
+            
 
 
 
-             
-
-             
-             
-             
-             
+	             
              
     
             			
