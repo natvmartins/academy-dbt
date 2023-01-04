@@ -15,4 +15,4 @@ with
         from {{ source('erp', 'salesterritory') }}
     )
 select * 
-from salesterritory   
+from source_salesterritory   
