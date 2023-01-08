@@ -8,9 +8,10 @@ with
             , cast(specialofferid as int) as  id_oferta_especial	
             , cast(unitprice as numeric) as  preco_unitario	
             , cast(unitpricediscount as numeric) as  desconto_preco_unitario
+            , cast(modifieddate as date) as data_modificacao_valor
             --, carriertrackingnumber				
             --, rowguid			
-            --, modifieddate
+
         
         from {{ source('erp', 'salesorderdetail') }}
     )

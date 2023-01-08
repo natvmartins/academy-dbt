@@ -62,6 +62,16 @@ sources:
           - name: personid
             description: ID da pessoa.
 
+      - name: businessentityaddress
+        description: Tabela de endereços.
+        columns:
+          - name: businessentityid
+            description: ID de negócio.			
+          - name: addressid
+            description: ID de endereço.
+          - name: addresstypeid
+            description: ID do tipo de endereço.
+
       - name: person
         description: Tabela de pessoas.
         columns:
@@ -160,6 +170,10 @@ sources:
         columns:
           - name: customerid
             description: ID do cliente.
+            tests:
+              - unique
+              - not_null
+              
             
           - name: personid
             description: ID da pessoa.   
@@ -300,10 +314,36 @@ sources:
           - name: unitpricediscount
             description: Desconto de preço unitário
 
+          - name: modifieddate
+            description: Data de modificação do valor
 
+      - name: stateprovince
+        description: Tabela de endereço, com os estados dos países.
+        columns:
+          - name: stateprovinceid
+            description: ID do estado.
 
-	             
-             
+          - name: territoryid
+            description: ID da região.
+
+          - name: stateprovincecode
+            description: Código do estado.
+
+          - name: countryregioncode
+            description: Código da região do país.
+
+          - name: name
+            description: Nome do estado.
+
+      - name: countryregion
+        description: Tabela de endereço, com os países.
+        columns:
+          - name: countryregioncode
+            description: Código da região do país.
+
+          - name: name
+            description: Nome do país.
+
     
             			
             			
