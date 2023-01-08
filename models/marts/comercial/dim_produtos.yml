@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: dim_produtos
+    description: Dimensão com informações de produtos.
+    columns:
+      - name: sk_produto
+        description: Primary key da dimensão de produtos.
+        tests:
+          - unique
+          - not_null
+          
+      - name: id_produto
+        description: ID do produto.
+
+      - name: id_subcategoria_produto
+        description: ID da subcategoria do produto.
+
+      - name: nome_produto
+        description: Nome do produto.
+
+      - name: numero_produto
+        description: Número do produto.
+
+      - name: cor_produto
+        description: Cor do produto.
+
+      - name: nivel_estoque_seguranca
+        description: Nível de estoque de segurança
+
+      - name: custo_padrao
+        description: Custo padrão do produto.
+
+      - name: preco_de_lista
+        description: Preço de catálogo do produto.
+
+      - name: dias_para_fabricar
+        description: Dias para fabricar o produto.
+
+      - name: linha
+        description: Linha do produto.
+
+      - name: classe
+        description: Classe do produto.
+
+      - name: estilo
+        description: Estilo do produto.

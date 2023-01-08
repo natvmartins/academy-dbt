@@ -170,6 +170,10 @@ sources:
         columns:
           - name: customerid
             description: ID do cliente.
+            tests:
+              - unique
+              - not_null
+              
             
           - name: personid
             description: ID da pessoa.   
@@ -309,6 +313,9 @@ sources:
 
           - name: unitpricediscount
             description: Desconto de preço unitário
+
+          - name: modifieddate
+            description: Data de modificação do valor
 
       - name: stateprovince
         description: Tabela de endereço, com os estados dos países.
