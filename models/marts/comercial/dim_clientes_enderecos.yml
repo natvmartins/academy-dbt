@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: dim_clientes
+  - name: dim_clientes_enderecos
     description: Tabela dimensão clientes.
     columns:
       - name: sk_cliente

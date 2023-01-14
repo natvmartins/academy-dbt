@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_cartao_credito
+    description: Dimensão com informações de cartões de crédito.
+    columns:
+      - name: sk_cartao_credito
+        description: Primary key da dimensão de cartões de crédito.
+        tests:
+          - unique
+          - not_null
+     
+      - name: id_cartao_credito
+        description: ID fonte do cartão de crédito.
+
+      - name: id_negocio
+        description: ID de negócio.
+
+      - name: tipo_cartao
+        description: Tipo do cartão de crédito.

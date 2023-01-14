@@ -8,20 +8,6 @@ with
         from  {{ ref('stg_erp__clientes') }}
     )
 
-    , cartao_credito_pessoas as (
-        select 
-            id_negocio
-            , id_cartao_credito
-        from {{ ref('stg_erp__cartao_credito_pessoas') }}
-    )
-
-    , cartao_credito as (
-        select
-            id_cartao_credito
-            , tipo_cartao
-        from {{ ref('stg_erp__cartao_credito') }}
-    )
-
     , pessoas as (
         select 
             id_negocio
@@ -80,6 +66,7 @@ with
         select
             row_number() over (order by pessoas.id_negocio) as sk_cliente /* por endereço */
             , clientes.id_cliente
+            , clientes.id_loja
             , clientes.id_pessoa
             , pessoas.id_negocio
             , pessoas.nome_pessoa
@@ -101,3 +88,4 @@ with
 
 select * 
 from uniao_tabelas
+

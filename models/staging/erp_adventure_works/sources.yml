@@ -344,6 +344,19 @@ sources:
           - name: name
             description: Nome do país.
 
+      - name: store
+        description: Tabela de lojas.
+        columns:
+          - name: businessentityid
+            description: ID da loja.
+
+          - name: name
+            description: Nome da loja.
+
+          - name: salespersonid
+            description: ID do vendedor.
+
+
     
             			
             			
