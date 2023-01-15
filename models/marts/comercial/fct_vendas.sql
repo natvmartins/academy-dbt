@@ -115,6 +115,7 @@ with
             , clientes.id_loja
             , vendas_motivo.id_motivo_venda
             --, vendas.id_metodo_entrega
+            , vendas_detalhes.id_oferta_especial
             , cartoes_credito.sk_cartao_credito as fk_cartao_credito
             , vendas.id_cartao_credito
             , cartoes_credito.tipo_cartao
@@ -132,7 +133,6 @@ with
             , produtos.preco_de_lista
             --, vendas_detalhes.id_venda
             , vendas_detalhes.quantidade_pedido
-            , vendas_detalhes.id_oferta_especial
             , vendas_detalhes.preco_unitario
             , vendas_detalhes.desconto_preco_unitario
             , vendas_detalhes.data_modificacao_valor
