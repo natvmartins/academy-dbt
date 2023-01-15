@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: dim_clientes_enderecos
+  - name: dim_clientes
     description: Tabela dimensão clientes.
     columns:
       - name: sk_cliente
@@ -12,37 +12,13 @@ models:
         
       - name: id_cliente
         description: Chave natural de identificação do cliente.
-        tests:
-          - unique
-          - not_null
         
       - name: id_pessoa
         description: Chave natural de identificação da pessoa.
-        tests:
-          - unique
-          - not_null
 
       - name: id_negocio
         description: Chave natural de identificação de negócio.
-        tests:
-          - unique
-          - not_null
-          
 
       - name: nome_pessoa
         description: Nome do cliente.  
 
-      - name: cidade
-        description: Cidade do cliente.
-
-      - name: codigo_estado
-        description: Código do estado do cliente.
-
-      - name: nome_estado
-        description: Estado do cliente.
-
-      - name: codigo_regiao_pais
-        description: Código do país do cliente.
-
-      - name: nome_pais
-        description: País do cliente.

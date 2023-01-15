@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_enderecos
+    description: Tabela dimensão endereços.
+    columns:
+      - name: sk_endereco
+        description: Chave primária da tabela de endereços.
+        tests:
+          - unique
+          - not_null
+
+      - name: id_endereco
+        description: ID natural de endereços.
+        
+      - name: cidade
+        description: Cidade do cliente.
+
+      - name: codigo_estado
+        description: Código do estado do cliente.
+
+      - name: nome_estado
+        description: Estado do cliente.
+
+      - name: codigo_regiao_pais
+        description: Código do país do cliente.
+
+      - name: nome_pais
+        description: País do cliente.

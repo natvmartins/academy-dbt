@@ -1,0 +1,161 @@
+version: 2
+
+models:
+  - name: fct_vendas
+    description: Tabela de fatos de vendas.
+    columns:
+      - name: id_venda
+        description: Identificação única da venda.
+        tests:
+          - not_null          
+
+      - name: id_detalhes_venda
+        description: Identificação única de detalhes da venda.
+        tests:
+          - not_null        
+
+      - name: fk_produto
+        description: Identificação única de produto como chave estrangeira.
+        tests:
+          - not_null
+                   
+      - name: id_produto
+        description: Identificação natural única de produto.
+        tests:
+          - not_null
+          
+      - name: id_subcategoria_produto
+        description: Identificação natural única de subcategoria de produto.
+
+      - name: fk_cliente
+        description: Identificação única de cliente como chave estrangeira.
+        tests:
+         - not_null
+         
+      - name: id_cliente
+        description: Identificação natural única de cliente.
+        tests:
+          - not_null
+
+      - name: id_vendedor
+        description: Identificação natural única de vendedor.
+
+      - name: id_regiao
+        description: Identificação natural única de região.
+
+      - name: id_endereco_pagamento
+        description: Identificação natural única do endereço de pagamento.
+
+      - name: id_endereco_entrega
+        description: Identificação natural única de endereço de entrega.
+
+      - name: id_loja
+        description: Identificação natural única da loja.
+
+      - name: id_motivo_venda
+        description: Identificação natural única do motivo da venda.
+
+      - name: fk_cartao_credito
+        description: Identificação única de cartão de crédito como chave estrangeira.
+        tests:
+          - not_null
+          
+      - name: id_cartao_credito
+        description: Identificação natural única de cartão de crédito.
+
+      - name: tipo_cartao
+        description: Tipo do cartão de crédito.
+
+      - name: motivo_venda
+        description: Descrição do motivo da venda.
+
+      - name: tipo_motivo_venda
+        description: Tipo do motivo da venda.
+
+      - name: data_pedido
+        description: Data da realização do pedido.
+        
+      - name: data_limite
+        description: Data limite do pedido.
+        
+      - name: data_entrega
+        description: Data da entrega do pedido.
+        
+      - name: status
+        description: Status do pedido.
+        
+      - name: sub_total
+        description: Valor sub total.
+        
+      - name: valor_taxa
+        description: Valor a taxa.
+        
+      - name: valor_frete
+        description: Valor do frete.
+        
+      - name: valor_total
+        description: Valor total.
+        
+      - name: custo_padrao
+        description: Custo padrão do produto.
+        
+      - name: preco_de_lista
+        description: Preço de lista do produto.
+        
+      - name: quantidade_pedido
+        description: Quantidade pedida do produto.
+        
+      - name: id_oferta_especial
+        description: Identificação única e natural da oferta especial.
+        
+      - name: preco_unitario
+        description: Preço unitário.
+        
+      - name: desconto_preco_unitario
+        description: Desconto em preço unitário.
+        
+      - name: data_modificacao_valor
+        description: Data de modificação do valor do produto.
+        
+      - name: nome_produto
+        description: Nome do produto.
+        
+      - name: numero_produto
+        description: Número do produto.
+        
+      - name: cor_produto
+        description: Cor do produto.
+        
+      - name: nivel_estoque_seguranca
+        description: Nível do estoque de segurança.
+        
+      - name: dias_para_fabricar
+        description: Dias para fabricar o produto.
+        
+      - name: linha
+        description: Linha do produto.
+        
+      - name: classe
+        description: Classe do produto.
+        
+      - name: estilo
+        description: Estilo do produto.
+        
+      - name: nome_pessoa
+        description: Nome do cliente.
+        
+      - name: cidade
+        description: Cidade.
+        
+      - name: codigo_estado
+        description: Código do estado.
+        
+      - name: codigo_regiao_pais
+        description: Código da região do país.
+        
+      - name: nome_estado
+        description: Nome do estado.
+        
+      - name: nome_pais
+        description: Nome do país.
+        
