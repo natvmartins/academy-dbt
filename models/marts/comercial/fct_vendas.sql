@@ -17,20 +17,27 @@ with
         from {{ ref('dim_produtos')}}
     )
 
-    , clientes_enderecos as (
+    , clientes as (
         select 
             sk_cliente
             , id_cliente
             , id_loja
             , id_pessoa
-            , id_negocio
             , nome_pessoa
+
+        from {{ ref('dim_clientes')}}
+    )
+
+    , enderecos as (
+        select 
+            sk_endereco as fk_endereco
+            , id_endereco
             , cidade
             , codigo_estado
             , codigo_regiao_pais
             , nome_estado
             , nome_pais 
-        from {{ ref('dim_clientes_enderecos')}}
+        from {{ ref('dim_enderecos')}}
     )
 
     , cartoes_credito as (
@@ -40,6 +47,7 @@ with
             , id_negocio
             , tipo_cartao
         from {{ ref('dim_cartoes_credito')}}
+        --where id_cartao_credito = 4319
     )
 
     , vendas as (
@@ -59,7 +67,7 @@ with
             , sub_total
             , valor_taxa
             , valor_frete
-            , valot_total
+            , valor_total
         from {{ ref('stg_erp__vendas')}}
     )
 
@@ -98,13 +106,13 @@ with
             , produtos.sk_produto as fk_produto
             , vendas_detalhes.id_produto
             , produtos.id_subcategoria_produto
-            , clientes_enderecos.sk_cliente as fk_cliente
+            , clientes.sk_cliente as fk_cliente
             , vendas.id_cliente
             , vendas.id_vendedor
             , vendas.id_regiao
             , vendas.id_endereco_pagamento
             , vendas.id_endereco_entrega
-            , clientes_enderecos.id_loja
+            , clientes.id_loja
             , vendas_motivo.id_motivo_venda
             --, vendas.id_metodo_entrega
             , cartoes_credito.sk_cartao_credito as fk_cartao_credito
@@ -119,7 +127,7 @@ with
             , vendas.sub_total
             , vendas.valor_taxa
             , vendas.valor_frete
-            , vendas.valot_total
+            , vendas.valor_total
             , produtos.custo_padrao
             , produtos.preco_de_lista
             --, vendas_detalhes.id_venda
@@ -128,7 +136,6 @@ with
             , vendas_detalhes.preco_unitario
             , vendas_detalhes.desconto_preco_unitario
             , vendas_detalhes.data_modificacao_valor
-            , produtos.id_subcategoria_produto
             , produtos.nome_produto
             , produtos.numero_produto
             , produtos.cor_produto
@@ -137,23 +144,22 @@ with
             , produtos.linha
             , produtos.classe
             , produtos.estilo
-            , clientes_enderecos.nome_pessoa
-            , clientes_enderecos.cidade
-            , clientes_enderecos.codigo_estado
-            , clientes_enderecos.codigo_regiao_pais
-            , clientes_enderecos.nome_estado
-            , clientes_enderecos.nome_pais 
+            , clientes.nome_pessoa
+            , enderecos.cidade
+            , enderecos.codigo_estado
+            , enderecos.codigo_regiao_pais
+            , enderecos.nome_estado
+            , enderecos.nome_pais 
 
         from vendas
         left join vendas_detalhes on vendas_detalhes.id_venda = vendas.id_venda
         left join produtos on produtos.id_produto = vendas_detalhes.id_produto
-        left join clientes_enderecos on clientes_enderecos.id_cliente = vendas.id_cliente
-        left join cartoes_credito on cartoes_credito.id_negocio = vendas.id_cliente
+        left join clientes on clientes.id_cliente = vendas.id_cliente
+        left join enderecos on enderecos.id_endereco = vendas.id_endereco_entrega
+        left join cartoes_credito on cartoes_credito.id_cartao_credito = vendas.id_cartao_credito
         left join vendas_motivo1 on vendas_motivo1.id_venda = vendas.id_venda
         left join vendas_motivo on vendas_motivo.id_motivo_venda = vendas_motivo1.id_motivo_venda
     )
 
 select * 
 from uniao_tabelas
-
-/* resultados referente a cartao de credito e motivo da venda nao estao retornando */

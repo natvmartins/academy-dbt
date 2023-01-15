@@ -16,7 +16,7 @@ with
             , cast(subtotal as numeric) as sub_total	
             , cast(taxamt as numeric) as valor_taxa
             , cast(freight as numeric) as valor_frete	
-            , cast(totaldue as numeric) as valot_total
+            , cast(totaldue as numeric) as valor_total
             --, onlineorderflag 
             --, revisionnumber            
             --, purchaseordernumber			
